@@ -1,6 +1,7 @@
 # build stage
 FROM golang:1.11beta3-alpine3.8 as build-stage
 WORKDIR /app
+COPY ./main.go /app/
 RUN mkdir build && go build -o build/what-is-my-ip
 
 # production stage
